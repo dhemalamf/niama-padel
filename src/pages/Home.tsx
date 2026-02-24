@@ -212,8 +212,8 @@ export function Home() {
                             </div>
                         )}
                         <div className="im-controls">
-                            <button className="im-btn im-btn-plus" onClick={() => handleScore(1)}>+</button>
                             <button className="im-btn im-btn-minus" onClick={() => handleRemovePoint(1)}>−</button>
+                            <button className="im-btn im-btn-plus" onClick={() => handleScore(1)}>+</button>
                         </div>
                     </div>
                 </div>
