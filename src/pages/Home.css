@@ -1,0 +1,358 @@
+/* ===========================
+   Immediate Scoreboard (Home)
+   =========================== */
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    min-height: calc(100vh - 80px);
+    /* Account for bottom nav */
+    padding-bottom: var(--space-8);
+}
+
+/* Header */
+.immediate-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-2) 0;
+}
+
+.home-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.home-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--accent);
+    color: var(--bg-base);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--fw-black);
+    font-size: var(--fs-xs);
+    letter-spacing: -0.05em;
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.home-logo h2 {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-bold);
+    color: var(--foreground);
+    margin: 0;
+    display: none;
+    /* Hide on smallest screens */
+}
+
+@media (min-width: 480px) {
+    .home-logo h2 {
+        display: block;
+    }
+}
+
+.immediate-actions {
+    display: flex;
+    gap: var(--space-2);
+}
+
+/* Scoring Mode Toggle */
+.scoring-mode-toggle {
+    display: flex;
+    background: var(--surface);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-default);
+    padding: 3px;
+    gap: 2px;
+    width: fit-content;
+}
+
+.mode-pill {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--foreground-subtle);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-out);
+    white-space: nowrap;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.mode-pill:hover {
+    color: var(--foreground-muted);
+}
+
+.mode-pill.active {
+    background: var(--accent);
+    color: var(--bg-base);
+    box-shadow: 0 2px 8px var(--accent-glow);
+}
+
+/* VS label for Free mode divider */
+.im-vs-label {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-black);
+    color: var(--foreground-subtle);
+    letter-spacing: 0.1em;
+}
+
+.immediate-scoreboard {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: var(--shadow-card);
+}
+
+.im-sb-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-4);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border-default);
+}
+
+.im-sb-name {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-bold);
+    color: var(--foreground-muted);
+}
+
+.im-sb-scores {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .im-sb-scores {
+        flex-direction: row;
+    }
+}
+
+/* Team Columns */
+.im-team-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6);
+    gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+    .im-team-col.right {
+        align-items: flex-end;
+        text-align: right;
+    }
+}
+
+/* Score Display */
+.im-score-display {
+    font-size: clamp(6rem, 20vw, 10rem);
+    font-weight: var(--fw-black);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin: var(--space-2) 0;
+    transition: transform 150ms var(--ease-out);
+    text-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.im-score-display.flash {
+    transform: scale(1.05);
+}
+
+/* Central Divider */
+.im-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-4);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+    .im-divider {
+        flex-direction: column;
+        padding: var(--space-4) var(--space-2);
+        width: 60px;
+    }
+}
+
+.im-divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border-default);
+}
+
+@media (min-width: 768px) {
+    .im-divider-line {
+        height: auto;
+        width: 1px;
+    }
+}
+
+/* Set status pills */
+.im-sets-row {
+    display: flex;
+    gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+    .im-sets-row {
+        flex-direction: column;
+    }
+}
+
+.im-set-pill {
+    background: var(--surface);
+    border: 1px solid var(--border-default);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-bold);
+    color: var(--foreground-muted);
+}
+
+/* Score Controls */
+.im-controls {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .im-controls {
+        max-width: 240px;
+    }
+}
+
+.im-btn {
+    padding: var(--space-4);
+    border-radius: var(--radius-xl);
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-black);
+    border: none;
+    cursor: pointer;
+    transition: all var(--duration-fast);
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.im-btn:active {
+    transform: scale(0.95);
+}
+
+.im-btn-plus {
+    flex: 2;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--foreground);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.im-btn-plus:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.im-btn-minus {
+    flex: 1;
+    background: rgba(255, 0, 0, 0.1);
+    color: var(--error);
+}
+
+.im-btn-minus:hover {
+    background: rgba(255, 0, 0, 0.15);
+}
+
+/* Overlays (Deuce, Tiebreak) */
+.im-badges-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    z-index: 10;
+}
+
+.sb-badge.deuce {
+    background: var(--accent);
+    color: var(--bg-base);
+    box-shadow: 0 0 20px var(--accent-glow);
+    font-size: var(--fs-sm);
+    padding: var(--space-1) var(--space-3);
+    border: none;
+}
+
+.sb-badge.tiebreak {
+    background: var(--accent-bright);
+    color: var(--bg-base);
+    font-size: var(--fs-sm);
+}
+
+/* Context / Stats Footer */
+.im-context {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    margin-top: var(--space-2);
+}
+
+.im-stat-bar {
+    display: flex;
+    background: var(--surface);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-default);
+    padding: var(--space-3) var(--space-4);
+    gap: var(--space-6);
+}
+
+.im-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.im-stat-label {
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    color: var(--foreground-subtle);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.05em;
+}
+
+.im-stat-val {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-bold);
+    color: var(--foreground);
+}
+
+.im-marketing {
+    text-align: center;
+    background: linear-gradient(180deg, transparent, var(--surface) 100%);
+    padding: var(--space-6) var(--space-4);
+    border-radius: var(--radius-xl);
+}
+
+.im-marketing p {
+    margin: 0;
+}
+
+.im-marketing p:first-child {
+    margin-bottom: var(--space-1);
+    color: var(--accent-bright);
+}

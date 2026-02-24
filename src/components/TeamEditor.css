@@ -1,0 +1,152 @@
+/* ===========================
+   TeamEditor Component
+   =========================== */
+
+.team-editor {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    position: relative;
+}
+
+.team-editor.right {
+    flex-direction: row-reverse;
+}
+
+/* Color Swatch */
+.team-color-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-color-swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--border-default);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-out);
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.team-color-swatch:hover {
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Color Picker Popover */
+.color-picker-popover {
+    position: absolute;
+    top: calc(100% + var(--space-2));
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-elevated);
+    padding: var(--space-3);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-default);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    min-width: 180px;
+    animation: fadeIn var(--duration-fast) var(--ease-out);
+}
+
+.team-editor.right .color-picker-popover {
+    /* Slightly shift to stay on screen if right aligned */
+    transform: translateX(min(-50%, calc(-100% + 24px)));
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2);
+}
+
+.color-option {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform var(--duration-fast);
+    padding: 0;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.selected {
+    border-color: var(--surface);
+    box-shadow: 0 0 0 2px var(--foreground);
+}
+
+/* Name Editor */
+.team-name-display {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    color: var(--foreground);
+    cursor: text;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-md);
+    transition: background var(--duration-fast);
+    display: inline-block;
+    min-width: 60px;
+}
+
+.team-name-display:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.team-name-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.team-name-input {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    color: var(--foreground);
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-md);
+    padding: var(--space-1) var(--space-7) var(--space-1) var(--space-2);
+    width: 140px;
+    box-shadow: 0 0 0 3px var(--accent-dim);
+    outline: none;
+}
+
+.team-editor.right .team-name-input {
+    text-align: right;
+    padding: var(--space-1) var(--space-2) var(--space-1) var(--space-7);
+}
+
+.team-name-clear {
+    position: absolute;
+    right: 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-full);
+    background: var(--Foreground-muted);
+    color: var(--bg-base);
+    font-size: var(--fs-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.team-name-clear:hover {
+    background: var(--foreground);
+}
+
+.team-editor.right .team-name-clear {
+    right: auto;
+    left: 8px;
+}

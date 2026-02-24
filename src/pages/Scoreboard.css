@@ -1,0 +1,383 @@
+/* ===========================
+   Live Scoreboard
+   =========================== */
+
+.scoreboard-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.sb-match-name {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--foreground-muted);
+    letter-spacing: 0.02em;
+}
+
+/* Set scores header */
+.sb-set-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background: var(--surface);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-default);
+}
+
+.sb-set-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.sb-set-team-name {
+    flex: 1;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--foreground-muted);
+}
+
+.sb-set-games {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.sb-set-game {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-bold);
+    border-radius: var(--radius-sm);
+    background: var(--bg-elevated);
+}
+
+.sb-set-game.current {
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid var(--border-accent);
+}
+
+/* Main score display */
+.sb-score-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8) var(--space-4);
+    background: var(--bg-elevated);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-default);
+    box-shadow: var(--shadow-card);
+    position: relative;
+}
+
+.sb-score-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.sb-team-label {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--foreground-muted);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.sb-server-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent-glow);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.sb-points {
+    font-size: var(--fs-score);
+    font-weight: var(--fw-extrabold);
+    color: var(--foreground);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    min-width: 80px;
+    text-align: center;
+    transition: transform 100ms var(--ease-out);
+}
+
+.sb-score-side.flash .sb-points {
+    color: var(--accent);
+}
+
+.sb-game-label {
+    font-size: var(--fs-xs);
+    color: var(--foreground-subtle);
+    font-weight: var(--fw-medium);
+}
+
+.sb-score-divider {
+    font-size: var(--fs-2xl);
+    color: var(--foreground-subtle);
+    padding: 0 var(--space-4);
+}
+
+/* Match situation badges */
+.sb-situation {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+.sb-badge {
+    display: inline-flex;
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: var(--radius-full);
+    background: var(--accent-dim);
+    color: var(--accent);
+    border: 1px solid var(--border-accent);
+}
+
+/* Score buttons */
+.sb-controls {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.sb-btn-score {
+    flex: 1;
+    padding: var(--space-5) var(--space-4);
+    border-radius: var(--radius-lg);
+    font-size: var(--fs-md);
+    font-weight: var(--fw-bold);
+    transition: all var(--duration-fast) var(--ease-out);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.sb-btn-score-a {
+    background: var(--accent);
+    color: var(--bg-base);
+    box-shadow: var(--shadow-button);
+}
+
+.sb-btn-score-a:hover {
+    background: var(--accent-bright);
+    box-shadow: var(--shadow-button-hover);
+}
+
+.sb-btn-score-a:active {
+    transform: scale(0.95);
+}
+
+.sb-btn-score-b {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--foreground);
+    border: 1px solid var(--border-default);
+    box-shadow: var(--shadow-card);
+}
+
+.sb-btn-score-b:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: var(--border-hover);
+}
+
+.sb-btn-score-b:active {
+    transform: scale(0.95);
+}
+
+/* General mode +/- buttons */
+.sb-general-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+.sb-general-team {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.sb-general-label {
+    text-align: center;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--foreground-muted);
+}
+
+.sb-general-btns {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.sb-btn-minus {
+    flex: 1;
+    padding: var(--space-4) var(--space-3);
+    border-radius: var(--radius-lg);
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    background: rgba(255, 92, 92, 0.12);
+    color: var(--error);
+    border: 1px solid rgba(255, 92, 92, 0.25);
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.sb-btn-minus:hover {
+    background: rgba(255, 92, 92, 0.18);
+}
+
+.sb-btn-minus:active {
+    transform: scale(0.95);
+}
+
+.sb-btn-plus {
+    flex: 1;
+    padding: var(--space-4) var(--space-3);
+    border-radius: var(--radius-lg);
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    background: var(--accent);
+    color: var(--bg-base);
+    box-shadow: var(--shadow-button);
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.sb-btn-plus:hover {
+    background: var(--accent-bright);
+}
+
+.sb-btn-plus:active {
+    transform: scale(0.95);
+}
+
+/* Action buttons row */
+.sb-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3);
+}
+
+/* Display mode — fullscreen score */
+.sb-display-mode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 75dvh;
+    gap: var(--space-6);
+}
+
+.sb-display-score {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.sb-display-points {
+    font-size: clamp(4rem, 15vw, 8rem);
+    font-weight: var(--fw-extrabold);
+    letter-spacing: -0.03em;
+    color: var(--foreground);
+    line-height: 1;
+}
+
+.sb-display-divider {
+    font-size: var(--fs-3xl);
+    color: var(--foreground-subtle);
+}
+
+.sb-display-team {
+    text-align: center;
+    font-size: var(--fs-md);
+    color: var(--foreground-muted);
+    font-weight: var(--fw-semibold);
+}
+
+/* Match completed */
+.sb-completed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+    text-align: center;
+    padding: var(--space-12) 0;
+}
+
+.sb-completed-trophy {
+    font-size: 3.5rem;
+}
+
+.sb-completed h2 {
+    font-size: var(--fs-3xl);
+}
+
+.sb-completed-score {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    color: var(--accent);
+}
+
+.sb-completed-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    width: 100%;
+    max-width: 320px;
+}
+
+/* Confirm modal */
+.sb-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(2, 2, 3, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+}
+
+.sb-modal {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    text-align: center;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
+}
+
+.sb-modal-actions {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.sb-modal-actions .btn {
+    flex: 1;
+}
+
+/* Landscape optimizations */
+@media (orientation: landscape) and (max-height: 500px) {
+    .sb-score-display {
+        padding: var(--space-4) var(--space-4);
+    }
+
+    .sb-points {
+        font-size: var(--fs-4xl);
+    }
+}

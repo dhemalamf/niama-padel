@@ -1,0 +1,112 @@
+{
+    "app": {
+        "name": "Niama Padel",
+        "tagline": "Marca. Registra. Juega."
+    },
+    "nav": {
+        "home": "Inicio",
+        "newMatch": "Nuevo Partido",
+        "history": "Historial",
+        "settings": "Ajustes"
+    },
+    "home": {
+        "hero": "Tu Marcador de Pádel",
+        "subtitle": "Marcador sencillo para cada partido. Empieza en segundos.",
+        "startMatch": "Nuevo Partido",
+        "recentMatches": "Partidos Recientes",
+        "noRecentMatches": "Aún no hay partidos. ¡Empieza el primero!"
+    },
+    "setup": {
+        "title": "Configurar Partido",
+        "matchName": "Nombre del Partido",
+        "matchNamePlaceholder": "ej. Social del viernes",
+        "scoringPreset": "Tipo de Puntuación",
+        "numberOfSets": "Número de Sets",
+        "players": "Jugadores",
+        "addPlayer": "Añadir Jugador",
+        "playerNamePlaceholder": "Nombre del jugador",
+        "teamA": "Equipo A",
+        "teamB": "Equipo B",
+        "assignTeams": "Asignar Equipos",
+        "tapToAssign": "Toca un jugador para asignarlo a un equipo",
+        "startMatch": "Iniciar Partido",
+        "needPlayers": "Añade al menos 1 jugador por equipo",
+        "server": "Primer Saque",
+        "selectServer": "Selecciona quién saca primero"
+    },
+    "presets": {
+        "official": "Pádel Oficial",
+        "officialDesc": "Puntuación estándar (15-30-40), mejor de 3 sets, tie-break en 6-6",
+        "goldenPoint": "Punto de Oro",
+        "goldenPointDesc": "Igual que oficial, pero en 40-40 el siguiente punto gana (sin ventaja)",
+        "fastSocial": "Set Rápido Social",
+        "fastSocialDesc": "Set corto a 4 juegos, tie-break en 4-4, un solo set",
+        "tieBreakMatch": "Partido con Tie-Break",
+        "tieBreakMatchDesc": "2 sets + super tie-break a 10 en vez de 3er set",
+        "rally21": "Conteo por Rally (21)",
+        "rally21Desc": "Puntuación lineal a 21 puntos, ganar por 2",
+        "general": "Puntuación General",
+        "generalDesc": "Contador simple +/- sin progresión automática, perfecto para cualquier deporte",
+        "custom": "Personalizado",
+        "customDesc": "Personaliza todos los parámetros de puntuación a tu gusto"
+    },
+    "scoreboard": {
+        "set": "Set",
+        "game": "Juego",
+        "serving": "Sacando",
+        "tieBreak": "Tie-Break",
+        "matchTieBreak": "Tie-Break de Partido",
+        "matchPoint": "Punto de Partido",
+        "setPoint": "Punto de Set",
+        "gamePoint": "Game Point",
+        "breakPoint": "Punto de Break",
+        "advantage": "VT",
+        "deuce": "Iguales",
+        "undo": "Deshacer",
+        "changeServer": "Saque",
+        "endGame": "Fin Juego",
+        "endSet": "Fin Set",
+        "endMatch": "Fin Partido",
+        "displayMode": "Modo Pantalla",
+        "exitDisplay": "Toca para salir",
+        "pointFor": "Punto para {{team}}",
+        "score": "Puntuación"
+    },
+    "match": {
+        "completed": "¡Partido Terminado!",
+        "winner": "¡{{team}} Gana!",
+        "draw": "Empate",
+        "totalGames": "Total de Juegos",
+        "setScores": "Resultado por Sets",
+        "saveMatch": "Guardar Partido",
+        "newMatch": "Nuevo Partido",
+        "shareScore": "Compartir",
+        "rematch": "Revancha",
+        "deleteMatch": "Eliminar Partido",
+        "confirmDelete": "¿Estás seguro de que quieres eliminar este partido?"
+    },
+    "history": {
+        "title": "Historial de Partidos",
+        "noMatches": "Aún no hay partidos en el historial.",
+        "vs": "vs",
+        "sets": "Sets"
+    },
+    "settings": {
+        "title": "Ajustes",
+        "language": "Idioma",
+        "sound": "Efectos de Sonido",
+        "haptic": "Vibración",
+        "about": "Acerca de",
+        "version": "Versión"
+    },
+    "common": {
+        "back": "Volver",
+        "cancel": "Cancelar",
+        "confirm": "Confirmar",
+        "save": "Guardar",
+        "delete": "Eliminar",
+        "close": "Cerrar",
+        "yes": "Sí",
+        "no": "No"
+    }
+}

@@ -1,0 +1,137 @@
+/* ===========================
+   Match Detail
+   =========================== */
+
+.match-detail-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.back-btn {
+    align-self: flex-start;
+}
+
+.detail-header {
+    text-align: center;
+}
+
+.detail-winner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    color: var(--accent);
+}
+
+.detail-trophy {
+    font-size: var(--fs-2xl);
+}
+
+/* Score table */
+.detail-score-table {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.detail-score-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+}
+
+.detail-score-row.header-row {
+    font-size: var(--fs-xs);
+    color: var(--foreground-subtle);
+    font-weight: var(--fw-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.detail-score-row.winner-row {
+    background: var(--accent-dim);
+}
+
+.detail-team-col {
+    flex: 1;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.detail-set-col {
+    width: 36px;
+    text-align: center;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-base);
+}
+
+.detail-set-col.total-col {
+    color: var(--accent);
+}
+
+/* Stats */
+.detail-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.detail-stat-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--fs-sm);
+    color: var(--foreground-muted);
+}
+
+.detail-stat-row span:first-child {
+    width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 0;
+}
+
+.detail-stat-bar-container {
+    flex: 1;
+    height: 8px;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.detail-stat-bar {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width 600ms var(--ease-expo);
+}
+
+.bar-a {
+    background: linear-gradient(90deg, var(--accent), #FFB845);
+}
+
+.bar-b {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.detail-stat-value {
+    font-weight: var(--fw-bold);
+    width: 28px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* Actions */
+.detail-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}

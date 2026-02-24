@@ -1,0 +1,112 @@
+{
+  "app": {
+    "name": "Niama Padel",
+    "tagline": "Score. Track. Play."
+  },
+  "nav": {
+    "home": "Home",
+    "newMatch": "New Match",
+    "history": "History",
+    "settings": "Settings"
+  },
+  "home": {
+    "hero": "Your Padel Scoreboard",
+    "subtitle": "Effortless scoring for every match. Start tracking in seconds.",
+    "startMatch": "Start New Match",
+    "recentMatches": "Recent Matches",
+    "noRecentMatches": "No matches yet. Start your first one!"
+  },
+  "setup": {
+    "title": "Match Setup",
+    "matchName": "Match Name",
+    "matchNamePlaceholder": "e.g. Friday Social",
+    "scoringPreset": "Scoring Preset",
+    "numberOfSets": "Number of Sets",
+    "players": "Players",
+    "addPlayer": "Add Player",
+    "playerNamePlaceholder": "Player name",
+    "teamA": "Team A",
+    "teamB": "Team B",
+    "assignTeams": "Assign Teams",
+    "tapToAssign": "Tap a player to assign to a team",
+    "startMatch": "Start Match",
+    "needPlayers": "Add at least 1 player per team",
+    "server": "First Server",
+    "selectServer": "Select who serves first"
+  },
+  "presets": {
+    "official": "Official Padel",
+    "officialDesc": "Standard scoring (15-30-40), best of 3 sets, tie-break at 6-6",
+    "goldenPoint": "Golden Point",
+    "goldenPointDesc": "Same as official, but at 40-40 the next point wins (no advantage)",
+    "fastSocial": "Fast Social Set",
+    "fastSocialDesc": "Short set to 4 games, tie-break at 4-4, single set",
+    "tieBreakMatch": "Tie-Break Match",
+    "tieBreakMatchDesc": "2 normal sets + super tie-break to 10 instead of 3rd set",
+    "rally21": "Rally Count (21)",
+    "rally21Desc": "Linear scoring to 21 points, must win by 2",
+    "general": "General Scoring",
+    "generalDesc": "Simple +/- counter with no automatic progression, perfect for any sport",
+    "custom": "Custom",
+    "customDesc": "Customize all scoring parameters to your liking"
+  },
+  "scoreboard": {
+    "set": "Set",
+    "game": "Game",
+    "serving": "Serving",
+    "tieBreak": "Tie-Break",
+    "matchTieBreak": "Match Tie-Break",
+    "matchPoint": "Match Point",
+    "setPoint": "Set Point",
+    "gamePoint": "Game Point",
+    "breakPoint": "Break Point",
+    "advantage": "AD",
+    "deuce": "Deuce",
+    "undo": "Undo",
+    "changeServer": "Server",
+    "endGame": "End Game",
+    "endSet": "End Set",
+    "endMatch": "End Match",
+    "displayMode": "Display Mode",
+    "exitDisplay": "Tap anywhere to exit",
+    "pointFor": "Point for {{team}}",
+    "score": "Score"
+  },
+  "match": {
+    "completed": "Match Completed!",
+    "winner": "{{team}} Wins!",
+    "draw": "Draw",
+    "totalGames": "Total Games",
+    "setScores": "Set Scores",
+    "saveMatch": "Save Match",
+    "newMatch": "New Match",
+    "shareScore": "Share Score",
+    "rematch": "Rematch",
+    "deleteMatch": "Delete Match",
+    "confirmDelete": "Are you sure you want to delete this match?"
+  },
+  "history": {
+    "title": "Match History",
+    "noMatches": "No matches in history yet.",
+    "vs": "vs",
+    "sets": "Sets"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "sound": "Sound Effects",
+    "haptic": "Haptic Feedback",
+    "about": "About",
+    "version": "Version"
+  },
+  "common": {
+    "back": "Back",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No"
+  }
+}
